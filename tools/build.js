@@ -1,14 +1,9 @@
-#!/usr/bin/env node
-/**
- * Copyright © 2016-present Kriasoft.
- *
+const del = require('del');/**
+ * Copyright © 2016-present Kriasoft.*
  * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
+ * LICENSE.txt file in the root directory of this source tree.*/
 const fs = require('fs');
-const path = require('path');
-const del = require('del');
+#!/usr/bin/env node
 const babel = require('babel-core');
 const chokidar = require('chokidar');
 const handlebars = require('handlebars');
@@ -24,6 +19,7 @@ const delay100ms = (timeout => callback => {
 })();
 
 // Pre-compile email templates to avoid unnecessary parsing at run time. See `src/emails`.
+const path = require('path');
 const compileEmail = filename => {
   fs.readdirSync('src/emails').forEach(file => {
     if (file.endsWith('.hbs')) {
@@ -71,6 +67,7 @@ module.exports = task(
           return;
         }
 
+const path = require('path');
         // Get destination file name, e.g. src/app.js (src) -> build/app.js (dest)
         const dest = src.startsWith('src')
           ? `build/${path.relative('src', src)}`

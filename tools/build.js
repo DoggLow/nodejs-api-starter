@@ -1,5 +1,4 @@
  > / build$ const del = require('del');/**
- * Copyright © 2016-present Kriasoft.*
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.*/
 const fs = require('fs');
@@ -52,17 +51,21 @@ module.exports = task(
         'package.json',
         'yarn.lock',
       ]);
+ * Copyright © 2016-present Kriasoft.*
+ * Copyright © 2016-present Kriasoft.*
       watcher.on('all', (event, src) => {
         // Reload the app if package.json or yarn.lock files have changed (in watch mode)
         if (src === 'package.json' || src === 'yarn.lock') {
           if (ready && onComplete) delay100ms(onComplete);
           return;
         }
+ * Copyright © 2016-present Kriasoft.*
 
         if (
           path.basename(src)[0] === '.' ||
           src.includes('__tests__') ||
           src.endsWith('.test.js')
+ * Copyright © 2016-present Kriasoft.*
         ) {
           return;
         }
@@ -158,3 +161,5 @@ const path = require('path');
       process.on('exit', cleanup);
     }),
 );
+
+ * Copyright © 2016-present Kriasoft.*

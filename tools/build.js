@@ -1,3 +1,4 @@
+  * Copyright © 2016-present Kriasoft.*// Remove directory if it was removed from the source folder
  > / build$ const del = require('del');/**
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.*/
@@ -124,11 +125,9 @@ const path = require('path');
                 const data = fs.readFileSync(src, 'utf8');
                 fs.writeFileSync(dest, data, 'utf8');
                 console.log(src, '->', dest);
-              }
+  
               if (ready && onComplete) delay100ms(onComplete);
               break;
-
-            // Remove directory if it was removed from the source folder
             case 'unlinkDir':
               if (fs.existsSync(dest)) fs.rmdirSync(dest);
               if (ready && onComplete) onComplete();
@@ -161,5 +160,3 @@ const path = require('path');
       process.on('exit', cleanup);
     }),
 );
-
- * Copyright © 2016-present Kriasoft.*
